@@ -1,0 +1,637 @@
+header h1{
+    height: 0;
+}
+
+header p{
+    height: 0;
+}
+
+#logo{
+    font-family: "Dosis";
+    color: white;
+    float: left;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 720px){
+    #logo{ display: none; }
+}
+
+@media only screen and (max-height: 500px){
+    nav{ display: none; }
+}
+
+@media only screen and (max-height: 568px){
+    section.home img.img_logo1{ display: none;}
+    section.home img.img_logo2{ display: block;}
+}
+
+.img_logo2{
+    display: none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Raleway";
+    line-height: 150%;
+    text-align: center;
+    overflow-x: hidden; /* otherwise header div will get bigger than the screen*/
+    /*min-width: 420px;*/
+    width: 100vw;
+}
+
+p{
+    padding: 20px 0;
+    text-align: justify;
+    color: gray;
+    line-height: 180%;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+nav{
+    /*position: fixed;*/
+    top: 0;
+    width: 100%;
+    background: #111;
+    overflow: auto;
+}
+
+nav ul{
+    font-size: 80%;
+    padding-top: 15px;
+}
+
+nav li{
+    list-style: none;
+    padding: 0 30px;
+    color: #fff;
+    float: right;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+    color: #FFF;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+a:hover{
+    color: white;
+    font-weight: 600;
+}
+
+section{
+    padding: 2%;
+}
+
+.bg-color{
+    background-color: white; /*#f4f4f4*/
+}
+
+.width-100{
+    width: 100%;
+}
+
+#page1{
+    /*height: 1200px;*/
+    height: 100vh;
+    background-color: white;
+    max-width: 100%;
+    min-width: 230px;
+}
+
+#page1 p{
+    text-align: center;
+    padding-top: 0;
+    /*line-height: 300%;
+    font-size: 1em;*/
+}
+
+#page1 h1{
+    font-family: "Comfortaa"; 
+    /*font-size: 250%;*/
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+#page2{
+
+}
+
+#page2 p{
+    align-content: center;
+}
+
+#page3 p{
+    text-align: center;
+}
+
+#page4{
+    
+}
+
+#page4 p{ 
+    text-align: center;
+}
+
+#page5{
+
+}
+
+#page6{
+    background-color: #111;
+    color: gray;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#page6 p{
+    font-family: "Arimo";
+    font-size: 80%;
+    line-height: 150%;
+    width: auto;
+}
+
+#page7 {
+    min-height: 350px;
+}
+#page7 p{
+    text-align: center;
+}
+
+.home{
+    text-align: center;
+    margin: auto;
+    margin-top: -230px;
+    position: absolute;
+    top: 50%;
+    width: 95%;
+}
+
+.navarrow{
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.navarrow.navdown{
+    border-top: 10px solid #000;
+}
+
+.navarrow.navup{
+    border-bottom: 10px solid gray;
+}
+
+.navarrow.navleft{
+    border-right: 10px solid #000;
+}
+
+.navarrow.navright{
+    border-left: 10px solid #000;
+}
+
+.table{
+    width: 100%;
+    float: left;
+}
+
+.table .column{
+    width: 50%;
+    float: left;
+    min-width: 150px;
+}
+
+form{
+    max-width: 500px;
+    min-width: 30%;
+}
+
+label{
+    width: 100%;
+    padding: 10px 20px;
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 25px;  
+}
+
+input{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    float: left;
+    height: 25px;
+}
+
+h1{
+    font-family: "Alegreya Sans";
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: "Alegreya Sans";
+    font-size: 120%;
+}
+
+button{
+    background: white;
+    border: 4px solid;
+    min-width: 120px;
+    width: 30%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.submit{
+    color: black;
+    font-weight:lighter;
+    font-size: 150%;
+}
+
+.bg-img{
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.centered {
+    width: 60%;
+    padding: 20px;
+    margin: auto auto;
+    overflow: hidden;
+}
+
+.title {
+    font-family: "Alegreya Sans";
+    font-size: 200%;
+    line-height: 150%;
+    color: #111;
+    text-align: center;
+}
+
+.imagecontainer{
+    max-width: 60%;
+    min-width: 130px;
+    margin: auto;
+    box-shadow: 2px 2px 30px rgba(151,151,151,0.4);
+}
+
+img{
+    vertical-align: middle;
+
+}
+
+div.panel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#infobox{
+    position: relative;
+    float: left;
+    margin: 50px 5px 0 0;
+    min-width: 35%;
+    height: 350px;
+    overflow: hidden;
+    background: gray;
+    box-shadow: 1px 1px 30px rgba(158,151,151,0.3);
+}
+
+.info {
+    width: 100%; 
+    background: #f4f4f4; 
+    float: left; 
+    padding: 50px 0;
+    min-width: 130px;
+}
+
+.infoDetails {
+    width: 50%; 
+    float: left;
+    text-align: left;
+    background: #f4f4f4;
+}
+
+.infoDetails.left{
+    font-weight: 600;
+    text-align: right;
+}
+
+.transparent{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.et-team{
+    width: 100%;
+    position: relative;
+    /*padding-right: 2.5%;*/
+}
+
+.et-member{
+    max-width: 250px;
+    border: white solid 20px;
+    min-width: 100px;
+    box-shadow: 1px 1px 30px rgba(158,151,151,0.3);
+}
+
+.et-member-footer{
+    padding-top: 10px; 
+    line-height: 1.5em;
+    background-color: white;
+}
+
+@media screen and (max-width: 767px){
+    div.one{ width: 100%}
+}
+
+.text {
+    -webkit-columns: 3 150px;
+    -moz-columns: 3 150px;
+    columns: 3 150px;
+    -webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em;
+}
+
+.numberCircle{
+    border-radius: 50%;
+
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 28px Arimo;
+}
+
+.program{
+    font-size: 110%;
+    padding-top: 10%;
+}
+
+.program p{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.clear{
+    clear: both;
+}
+.container3{
+    margin: 0 auto;
+}
+/*
+section.module:last-child {
+margin-bottom: 0;
+}
+
+section.module h2 {
+margin-bottom: 40px;
+font-family: "Roboto Slab", serif;
+font-size: 30px;
+}
+
+section.module p {
+margin-bottom: 40px;
+font-size: 16px;
+font-weight: 300;
+}
+
+section.module p:last-child {
+margin-bottom: 0;
+}
+
+section.module.content {
+padding: 40px 0;
+}
+*/
+@media only screen and (max-width: 1024px){
+    section.module.parallax{
+        background-attachment: scroll !important;
+    }
+    section.module.parallax h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 48px;
+    line-height: 600px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+}
+}
+section.module.parallax {
+    /*height: 800px;*/
+    height: 100vh;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+    
+section.module.parallax h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 48px;
+    line-height: 600px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+}
+section.module.parallax-1 {
+    background-image: url("../images/bg/DSC09210_Fotor.jpg");
+}
+section.module.parallax-2 {
+    background-image: url("../images/bg/DSC09235_Fotor.jpg");
+}
+section.module.parallax-3 {
+    background-image: url("../images/bg/DSC09242_Fotor.jpg");
+}
+section.module.parallax-4 {
+    background-image: url("../images/bg/DSC09252_Fotor.jpg");
+}
+section.module.parallax-5 {
+    background-image: url("../images/bg/DSC09265_Fotor.jpg");
+}
+
+@media all and (min-width: 320px){
+    section.home img{
+        width: 120px;
+    }
+}
+
+@media all and (min-width: 600px) {
+    section.module h2 {
+        font-size: 42px;
+    }
+    section.module p {
+        font-size: 20px;
+    }
+    section.module.parallax h1 {
+        font-size: 96px;
+    }
+    section.home h1{
+        font-size: 32px;
+     
+    }
+    section.home p{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    section.home img{
+        width: 150px;
+    }
+}
+@media all and (min-width: 960px) {
+    section.module.parallax h1 {
+        font-size: 160px;
+    }
+    section.home h1{
+        font-size: 42px;
+        line-height: 46px;
+    }
+    section.home p{
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+    section.home img{
+        width: 200px;
+    }
+}
+
+.transport {
+    padding-bottom: 20px;
+}
+
+ul{
+    color: gray;
+}
+
+.program-box{
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.program-box .pgr-days{
+    padding-bottom: 30px;
+    overflow: auto;
+}
+
+table .table{
+    float: left;
+}
+
+table th.time{
+    width: 100px;
+    text-align: right;
+}
+
+table th.content{
+    text-align: left;
+    padding-left: 10px;
+}
+
+table td.subcontent{
+    color: gray;
+    font-size: 80%;
+}
+
+.content-box{
+    width: 250px;
+    min-height: 350px;
+    border: 1px solid gray;
+    background-color: white;
+    box-shadow: 1px 1px 30px rgba(158,151,151,0.3);
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.content-box .subheader{
+    padding: 5px 10px;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    background-color: rgba(151,151,151, 0.5);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    min-height: 50px;
+}
+
+.content-box p.boxcontent{
+    padding: 10px;
+    text-align: left;
+    line-height: 140%;
+    margin: 10px;
+    position: absolute;
+    top: 60%;
+    font-size: 80%;
+    color: #111;
+}
+
+.content-box .content-box-number{
+    width: 250px;
+    height: auto;
+    position: absolute;
+    font-size: 2190%;
+    line-height: 100%;
+    color: lightgray;
+    margin: auto 0;
+    font-family: sans-serif;
+}
+
+.transport{
+    max-width: 500px;
+    margin: auto;
+}
+
+hr.hr-style {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(158,151,151, 0), rgba(158,151,151, 0.75), rgba(158,151,151,0));
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.responsiveContainer {
+  position: relative;
+  padding-bottom: 56%;
+  height: 0;
+  overflow: hidden;
+}
+
+.responsiveContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

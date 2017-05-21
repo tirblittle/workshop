@@ -1,0 +1,915 @@
+/******************************************************************************
+ - buttons
+ - 2015/10 *Neat hover animations on buttons*Copyright (c) 2015 by Bob Savant
+ - http://codepen.io/Savantos/pen/mHIpt
+ ******************************************************************************/
+/******************************************************************************
+ *
+ * general settings and global layout
+ *
+ ******************************************************************************/
+@import url('http://weloveiconfonts.com/api/?family=entypo'); /*Social media icons*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* everything that's rendered is in a body tag. here we can make very global
+ * settings to font, font size, font color etc. 
+ */
+body {
+  font-family: sans-serif,verdana,arial;  /* this applies global in all */
+  font-size: 11pt;
+  color: #606060;
+  text-align: center;            /* workaround to center whole page in IE5 */
+  padding: 0px;
+  margin: 0px;
+  background-color: none;
+}
+
+/* all contents (all modules, ...) are included in the following div. It
+ * constrains the width to 1000px and centers all contents. The reason
+ * for having this in an extra div is that we can not do these things on the
+ * body tag 
+ */
+div#main {
+  padding: 0 25px;
+  margin: 0;
+  margin-right: auto;    /* centering in not(IE) */
+  margin-left: auto;    /* centering in not(IE) */
+  margin-top: 100px;
+  width: 1000px;
+  text-align: left;    /* workaround for workaround to center in IE5 */
+}
+
+div#main_left {
+  width: 25%;
+  float: left;
+}
+
+div#main_right {
+  width: 75%;
+  float: left;
+}
+
+div#main_module_logo, div#main_module_top {
+  height: 80px;
+}
+
+div#main img {
+  border: 0 none;
+}
+
+div#main a {
+  text-decoration: none;
+  border: 0 none;
+  color: black;
+  font-weight: bold;
+}
+
+div#main_module_top {
+  padding-left: 20px;
+}
+
+div#main_lang_switcher {
+  width: 25%;
+  height: 25px;
+  float: right;
+  text-align: right;
+  padding-top: 10px;
+}
+
+/******************************************************************************
+ *
+ * main menu
+ *
+ ******************************************************************************/
+
+div#main ul.menu_main {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  font-size: 22pt;
+  float: none;
+  width: 100%;
+  display: inline-block;
+  /*background-color: #EEE;
+  background-color: transparent;*/
+  border-bottom: 1px solid #E0E0E0;
+}
+
+div#main ul.menu_main li {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  /*color: green;*/
+  padding-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 5px;
+  text-align: right;
+  float: right;
+}
+
+div#main ul.menu_main li a {
+  text-decoration: none;
+  color: #606060;
+  font-weight: normal;
+
+}
+
+div#main ul.menu_main li.active a {
+  text-decoration: none;
+  color: #E00;
+  font-weight: normal;
+}
+
+div#main ul.menu_main li a:hover {
+  color: black;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+/******************************************************************************
+ *
+ * left menu and submenus
+ *
+ ******************************************************************************/
+ 
+ div#main ul.menu_left {
+  margin: 0px;
+  padding: 0px;
+  margin-left: 70px;
+  margin-right: 10px;
+  clear: both;
+  font-size: 11pt;
+  margin-top: 55px;
+  margin-left: 0px;
+}
+
+div#main ul.menu_left li a,
+div#main ul.menu_left li.current li a,
+div#main ul.menu_left li.parent a {
+  text-decoration: none;
+  color: #606060;
+  font-weight: bold;
+}
+
+div#main ul.menu_left li.current a,
+div#main ul.menu_left li.active li.current a {
+  text-decoration: none;
+  color: #E00;
+  font-weight: bold;
+}
+
+div#main ul.menu_left li a:hover,
+div#main ul.menu_left li li a:hover {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div#main ul.menu_left li {
+  margin: 0px;
+  padding: 0px;
+  margin-left: 5px;
+  margin-right: 20px;
+  padding: 15px 0px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  list-style-type: none;
+  float: none;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+  padding-left: 10px;
+}
+div#main ul.menu_left li:last-child
+{
+  border-bottom: 0px !important;
+}
+
+
+div#main ul.menu_left li ul {
+  margin: 0px;
+  padding: 0px;
+  margin-left: 20px;  
+  margin-top: 5px;
+  font-size: 10pt;
+}
+
+div#main ul.menu_left li li {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+/******************************************************************************
+ *
+ * main component
+ * main point to modify article layout!
+ *
+ ******************************************************************************/
+
+div#main_module_component {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  float: left;
+  width: 500px;
+  font-size: 11pt;
+  color: #505050;
+}
+
+div#main_module_component h1 {
+  font-size: 18pt;
+  font-weight: normal;
+  margin: 0px;
+  padding-top: 0px;
+  margin-bottom: 7px;
+  color: #606060;
+}
+
+div#main_module_component h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 0px;
+  padding-top: 0px;
+  margin-bottom: 5px;
+  color: #505050;
+}
+
+div#main_module_component p {
+  clear: both;
+  font-size: 11pt;
+  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  color: #505050;
+
+}
+
+div#main_module_component ul {
+  margin-left: 30px;
+  margin-bottom: 16px;
+}
+
+div#main_module_component ul li {
+  list-style-type: disc;
+}
+
+div#main_module_component ol {
+  margin-left: 30px;
+}
+
+div#main_module_component a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+div#main_module_component a:hover {
+  text-decoration: underline;
+  color: #E00000;
+}
+
+/* Pasted from old website - check if still needed and remove if not */
+/* ================================================ */
+
+div#main_module_component td {
+  /* color: black; */
+  font-size: 11pt;
+  vertical-align: top;
+  padding-bottom: 6px;
+}
+
+div#main_module_component td.head {
+  /* color: black; */
+  font-weight: bold;
+  width: 1%;
+  vertical-align: top;
+}
+
+div#main_module_component td.text {
+  /* color: black; */
+  padding: 2px;
+  vertical-align: top;
+}
+
+
+div#main_module_component td.varCol {
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  vertical-align: top;
+  border: 0px;
+}
+
+div#main_module_component td.twoColSmall {
+  padding: 0px;
+    padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: center;
+  width: 222px;
+  border: 0px;
+}
+
+div#main_module_component td.twoColBig {
+  padding: 0px;
+    padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: center;
+  width: 408px;
+  border: 0px;
+}
+
+div#main_module_component td.twoColSep {
+  padding: 0px;
+    padding-top: 1px;
+  padding-bottom: 1px;
+  vertical-align: center;
+  width: 10px;
+  border: 0px;
+}
+
+div#main_module_component td.headarticletable {
+  /* color: black; */
+  font-weight: bold;
+  width: 25%;
+  padding: 3px;
+  vertical-align: top;
+}
+
+div#main_module_component td.textarticletable {
+  /* color: black; */
+  padding: 3px;
+  vertical-align: top;
+}
+
+div#main_module_component table.evModuleOverview {
+  border: none;
+  /* border-bottom: 1px solid black; */
+  /* border-top: 1px solid black; */
+}
+
+div#main_module_component table.evModuleOverview td,
+div#main_module_component table.evModuleOverview th {
+  width: 25%;
+  vertical-align: top;
+  align: left;
+  border: none;
+  padding: 4px;
+}
+
+div#main_module_component table.evModuleOverview th {
+  background: transparent url('http://www.evolute.at/images/stories/10x10_20.png') 0 0 repeat; 
+}
+
+div#main_module_component table.evModuleOverview {
+  border-collapse: collapse;
+}
+
+/* the following are classes for img AND span. this is for the png transparancy 
+ * fix for ie. there, the image is replaced by a span element which gets the 
+ * same class names assigned as the original image.
+ */
+
+div#main_module_component img.left, span.left {
+  float: left;
+  margin: 0px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* newsletter subscription */
+fieldset.adminform {
+  border: 1px;
+}
+
+.adminform legend,
+.adminform td,
+.adminform th,
+.adminform div {
+  /* color: black; */
+  font-size: 11pt;
+  text-align: left;
+}
+
+div.newsletter_body {
+  /* color: black; */
+  overflow: auto;
+/*  height: 470px; */
+  width: 730px;
+}
+
+/* .adminform legend is defined additionaly like h2 */
+/* 
+ * hack as IE does not support min width for td, we do not make
+ * the th element display: none; but keep it there for the width
+ * property but make line-height zero and render it hidden.
+ * font-color etc is there in case it is displayed anyway.
+ */
+.adminform th {
+  visibility: hidden;
+  line-height: 0px;
+}
+
+.adminform .list_name {
+  font-weight: bold;
+}
+
+.adminform .list_description {
+  padding: 5px;
+  padding-left: 0px;
+}
+
+.adminform input, 
+.adminform label {
+  clear: none;
+  float: left;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+form table.contentpane table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form table.contentpane table img {
+  display: none;
+}
+
+div.acymailing_list{
+  border : 0px;
+  margin : 0px;
+  margin-top: 200px;
+  padding : 0px;
+}
+
+div.acymailing_list:hover{
+  background-color: transparent;
+}
+
+div.acymailing_list div.list_description,
+div.acymailing_list div.list_name{
+  /* color: black; */
+  font-size: 11pt;
+
+}
+
+/******************************************************************************
+ *
+ * Acymailing custom fields
+ *
+ ******************************************************************************/
+
+.acymailing_form input.inputbox{
+  width: 100%;
+}
+
+.acysubbuttons .button{
+  border: 1px solid #E0E0E0;
+  text-align: center;
+  width: 150px;
+  height: 25px;
+  background: #F0F0F0;
+}
+.acysubbuttons .button:hover{
+  border: 1px solid #E00000;
+  color: #FFF;
+  background: #E00000;
+}
+
+
+/******************************************************************************
+ *
+ * Contact Form: hide headers "Contact", "Contact form"
+ *
+ ******************************************************************************/
+div .contact h3{
+  display: none;
+}
+div .contact fieldset{
+  border: none;
+}
+
+div .contact label{
+  font-size: 90%;
+}
+
+div .tip{
+  display: none;
+}
+
+div.contact-form legend, dl, dd {
+  margin-bottom: 1em;
+}
+
+div.contact-form button {
+  background-color:#F0F0F0;
+  border:1px solid #E0E0E0;
+  font-size:12pt;
+  font-weight: 300;
+  color: #505050;
+  width: 150px;
+  height: 25px;
+  margin-top: 1em;
+}
+
+div.contact-form button:hover{
+  background-color: #E00000;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+/******************************************************************************
+ *
+ * footer at position bottom
+ *
+ ******************************************************************************/
+ 
+div#main_module_bottom {
+  border-top: 1px solid #E0E0E0;
+  clear: both;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  padding-top: 10px;
+  font-size: 8pt;
+  color: #505050;
+  text-indent: 5%;
+  text-indent: 50px;
+  text-align: center;
+}
+
+/******************************************************************************
+ * 
+ * BUTTONS: October 2015
+ * ----------------------------------------------------------------------------
+ * DOWNLOAD BUTTON
+ *
+ * <class="download button">
+ * padding-left: >= 200px for following elements
+ ******************************************************************************/
+.download.button{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  
+  font-size: 24px;
+  font-weight: 300 !important;
+  
+  position: absolute;
+  
+  width: 200px;
+  height: 30px;
+  padding: 5px 0;
+    
+  background: #FFF;
+  color: #E00000 !important;
+  border: 1px solid #E00000 !important;
+  overflow: hidden;
+  
+  transition: all 0.5s;
+}
+
+.download.button:hover, .button:active {
+  text-decoration: none;
+  color: #FFF !important;
+  border: #FFF;
+  background: #E00000;
+  
+}
+
+.download.button span{
+  display: inline-block;
+  position: relative;
+  padding-right: 0;
+  transition: padding-right 0.5s;
+}
+
+.download.button span:after{
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: -18px;
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: -10px;
+
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid #FFF;
+  border-top: none;
+  border-right: none;
+
+  transition: opacity 0.5s, top 0.5s, right 0.5s;
+  transform: rotate(-45deg);
+}
+
+.download.button:hover span, .button:active span {
+  padding-right: 30px;
+}
+
+.download.button:hover span:after, .button:active span:after {
+  transition: opacity 0.5s, top 0.5s, right 0.5s;
+  opacity: 1;
+  border-color: #FFF;
+  right: 0;
+  top: 50%;
+}
+
+/******************************************************************************
+ * 
+ * BUTTONS: October 2015
+ * ----------------------------------------------------------------------------
+ * REQUEST BUTTON
+ *
+ * <class="download button request">
+ * padding-left: >= 200px for following elements
+ ******************************************************************************/
+.download.button.request{
+    color: #8ECDDB !important;
+    border: 1px solid #8ECDDB !important;
+  
+}
+.download.button:hover.request, .button:active{
+    background: #8ECDDB;
+    color: #FFF !important;
+    color: #A8DB8F;
+}
+
+
+
+
+
+
+/******************************************************************************
+ * BUYNOW BUTTON
+ * ----------------------------------------------------------------------------
+ * class="buynow button">
+ * padding-left: >= 200px for following elements
+ ******************************************************************************/
+.buynow.button{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  
+  font-size: 24px;
+  font-weight: 300 !important;
+  
+  position: absolute; 
+    
+  width: 200px;
+  height:30px;
+  padding: 5px 0;
+  
+  background: #FFF;
+  border: 1px solid #A0A0A0 !important;
+  color: #A0A0A0 !important;
+  overflow: hidden;
+  
+  transition: all 0.5s;
+}
+
+.buynow.button:hover, .button:active{
+  text-decoration: none;
+  color: #FFF !important;
+  border-color: #D0D0D0;
+  background: #D0D0D0;
+}
+
+.buynow.button span{
+  display: inline-block;
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.5s;
+}
+
+.buynow.button span:after{
+  content: ' ';  
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid #FFF;
+  border-top: none;
+  border-left: none;
+
+  transition: opacity 0.5s, right 0.5s, left 0.5s;
+  transform: rotate(-45deg);
+}
+
+.buynow.button:hover span, .button:active span{
+  padding-left: 30px;
+}
+
+.buynow.button:hover span:after, .button:active span:after{
+  transition: opacity 0.5s, right 0.5s, left 0.5s;
+  opacity: 1;
+  border-color: #FFF;
+  left: 0;
+  right: 20%;
+}
+
+/******************************************************************************
+ * 
+ * SIMPLE DOWNLOAD LINKS: transition like download button
+ * ----------------------------------------------------------------------------
+ * <class="download"><class="link">
+ * padding-left: >=112px for following elements
+ *
+ ******************************************************************************/
+.download .link{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /*text-align: center;*/
+  
+  font-size: 14px;
+  font-weight: 700 !important;
+  
+  position: absolute;
+  
+  width: 112px;
+  height: 1em;
+  padding: 0.3em 10px 0.3em 0;
+    
+  background: #FFF;
+  color: #E00000 !important;
+  overflow: hidden;
+  
+  transition: all 0.5s;
+}
+
+.download .link:hover, .link:active {
+  text-decoration: none;  
+}
+
+.download .link span{
+  display: inline-block;
+  position: relative;
+  padding-right: 0;
+  transition: padding-right 0.5s;
+}
+
+.download .link span:after{
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: -3px;
+  opacity: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: -8px;
+
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #E00000;
+  border-top: none;
+  border-right: none;
+
+  transition: opacity 0.5s, top 0.5s, right 0.5s;
+  transform: rotate(-45deg);
+}
+
+.download .link:hover span, .link:active span {
+  padding-right: 15px;
+}
+
+.download .link:hover span:after, .link:active span:after {
+  transition: opacity 0.5s, top 0.5s, right 0.5s;
+  opacity: 1;
+  right: 0;
+  top: 50%;
+}
+
+/******************************************************************************
+ * 
+ * Social: October 2015
+ *
+ ******************************************************************************
+ * Social media icons: @import url('http://weloveiconfonts.com/api/?family=entypo'); 
+ * facebook:&#62220;
+ * twitter: &#62217;
+ * google+: &#62223;
+ * linkedin:&#62232; 
+ ******************************************************************************/
+a.social{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  line-height: 50px;
+  font-family: Entypo;
+  font-size: 28px !important;
+  text-align: center;
+  color: #606060 !important;
+  background: #EEE;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+a.social:hover{
+  color: #E00000 !important;
+  text-decoration: none !important;
+}
+
+/******************************************************************************
+ * 
+ * clearfix: contain floats
+ *
+ ******************************************************************************
+ * For modern browsers
+ * 1.	The space content is one way to avoid an Opera bug when the
+ *		'contenteditable' attribute is included anywhere else in the document
+ *		Otherwise it causes space to appear at the top and bottom of the elements
+ * 		that receive the 'clearfix' class.
+ * 2.	The use of 'table' rather than 'block' is only necessary if using
+ *		':before' to contain the top-margins of child elements.
+ ******************************************************************************/
+.clearfix:before,
+.clearfix:after{
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after{
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix{
+  *zoom: 1;
+}
+
+.img_left{
+  float: left;
+  width: 40%;
+  margin-right: 20px;
+  
+}
+
+.img_right{
+  float: right;
+}
+
+/*.wrapper{
+  width: 730px;
+}*/
+
+
+
+
+
+/******************************************************************************
+ *
+ * changes to section [consulting]
+ *
+ ******************************************************************************/
+.item-page .consulting a:hover {
+  color: #8ECDDB !important;
+  text-decoration: none;
+}
+
+/******************************************************************************
+ *
+ * changes to section [software]
+ *
+ ******************************************************************************/
+.item-page .software a:hover {
+  color: #6E92DB !important;
+}
+
+/******************************************************************************
+ *
+ * changes to section [research]
+ *
+ ******************************************************************************/
+.item-page .research a:hover {
+  color: #A88FDB !important;
+}
+
+/******************************************************************************
+ *
+ * changes to section [company]
+ *
+ ******************************************************************************/
+.item-page .company a:hover {
+  color: #A8DB8F !important;
+}
+
